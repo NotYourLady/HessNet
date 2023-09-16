@@ -1,3 +1,3 @@
 ### HessNet
-![alt text](https://github.com/NotYourLady/HessNet/tree/main/source/loss.jpg)
+![alt text](loss.jpg)
 
