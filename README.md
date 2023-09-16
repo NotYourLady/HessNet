@@ -1,3 +1,3 @@
 ### HessNet
-![Screenshot](/soucre/loss.png)
+![Screenshot](./soucre/loss.png)
 
