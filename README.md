@@ -17,19 +17,14 @@ Or download the repository from [GitHub](https://github.com/NotYourLady)
 ----------
 
 ## Using ##
-lala
-
-### lala ###
-lala
-> lala
-> lala
+soon...
 
   
-lala  
+msst project  
   
-- lala
+- easy to use
   
-- lala
+- no prerequirenments
   
 
 
@@ -38,5 +33,5 @@ lala
 
 ## From the developer ##
 
-> Hello. lala
+> Hello. Have a good day!
   
