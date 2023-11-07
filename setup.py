@@ -7,7 +7,7 @@ def readme():
 
 setup(
     name='SegRunLib',
-    version='0.0.4',
+    version='0.0.5',
     author='msst',
     author_email='mihailshutov105@gmail.com',
     description='This is the module for segmentator running',
@@ -25,7 +25,7 @@ setup(
     ],
     keywords='ml nn cnn',
     project_urls={
-    'GitHub': 'https://github.com/NotYourLady'
+    'GitHub': 'https://github.com/NotYourLady/HessNet'
     },
     python_requires='>=3.6'
 )
