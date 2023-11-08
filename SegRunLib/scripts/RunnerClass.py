@@ -6,26 +6,26 @@ from SegRunLib.ml.get_model import get_model
 from SegRunLib.scripts.nifty_utils import save_vol_as_nii
 
 class Runner:
-    def __init__(self, settings=None):    
-        if settings:
-            self.settings = settings
-        else:
-            self.settings = {
-                "device" : 'cpu',
-                "patch_shape" : (256, 256, 64),
-                "overlap_shape" : (32, 32, 24),
-                "batch_size" : 1,
-                "num_workers": 4,
-                'path_to_pretrained': 'SegRunLib/pretrained_models/Unet3d_16ch_weights'
-            }   
-        self.device = self.settings['device']
-        self.model = get_model('Unet3d_16ch').to(self.settings["device"])
-        #self.load(self.settings['path_to_pretrained'])
-    
+    def __init__(self, settings):    
+        self.settings = {
+            "patch_shape" : (256, 256, 64),
+            "overlap_shape" : (32, 32, 24),
+            "batch_size" : 1,
+            "device" : settings.get('device', 'cpu'),
+            "path_to_weights" : settings.get('path_to_weights', None),
+            "num_workers" : settings.get('num_workers', 4),
+        }
+        if self.settings["path_to_weights"] is None:
+            raise RuntimeError('Need a weights path in config')
+        
+        self.model = get_model('Unet3d_16ch',
+                               self.settings["path_to_weights"]).to(self.settings["device"])
+        
+        
     def fast_predict(self, patch_loader, grid_aggregator, thresh=0.5):
         for patches_batch in tqdm(patch_loader):
             patch_locations = patches_batch[tio.LOCATION]
-            head_patches = patches_batch['head']['data'].to(self.device)
+            head_patches = patches_batch['head']['data'].to(self.settings['device'])
             with torch.no_grad():
                 patch_seg = self.model(head_patches)
                 grid_aggregator.add_batch(patch_seg.detach().cpu(), patch_locations)
@@ -53,8 +53,3 @@ class Runner:
         subject = tio.transforms.ZNormalization()(subject)
         seg = self.single_predict(subject)
         save_vol_as_nii(seg, subject.head.affine, out_path_nifty)
-    
-    
-    def load(self, path_to_checkpoint):
-        #checkpoint = torch.load(path_to_checkpoint, weights_only=True)  
-        self.model.load_state_dict(torch.load(path_to_checkpoint, weights_only=True))
