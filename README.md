@@ -19,8 +19,8 @@ Or download the repository from [GitHub](https://github.com/NotYourLady/SegRunLi
 import SegRunLib
 
 settings = {
-    "in_path_nifty" : "/home/msst/PyProjects/TestLib/Images/IXI136-HH-1452-MRA.nii.gz",
-    "out_path_nifty" : "/home/msst/PyProjects/TestLib/Segmentations/IXI136_seg.nii.gz",
+    "in_path_nifty" : "MRA_Image.nii.gz",
+    "out_path_nifty" : "MRA_Image_segmentation.nii.gz",
     "device" : "cuda"
 }
 
