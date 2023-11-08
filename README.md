@@ -12,22 +12,27 @@ To install, you can use the command:
 
     pip install SegRunLib
 
-Or download the repository from [GitHub](https://github.com/NotYourLady)
+Or download the repository from [GitHub](https://github.com/NotYourLady/SegRunLib)
 
 ----------
 
-## Using ##
-soon...
+## Using Example ##
+```
+import SegRunLib
 
-  
+settings = {
+    "in_path_nifty" : "/home/msst/PyProjects/TestLib/Images/IXI136-HH-1452-MRA.nii.gz",
+    "out_path_nifty" : "/home/msst/PyProjects/TestLib/Segmentations/IXI136_seg.nii.gz",
+    "device" : "cuda"
+}
+
+SegRunLib.run(settings)
+```
+
 msst project  
-  
-- easy to use
-  
+- easy to use for everyone
 - no prerequirenments
   
-
-
 ----------
 
 
