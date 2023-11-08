@@ -1,8 +1,6 @@
-### HessNet
-![alt text](loss.jpg)
-# **SegRunLib** #
+### **SegRunLib** ###
 
-This is simple library 
+This is simple library for vessel segmentation
 
 ----------
 
