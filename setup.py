@@ -15,10 +15,10 @@ setup(
     long_description_content_type='text/markdown',
     url='https://github.com/NotYourLady',
     packages=['SegRunLib', 'SegRunLib.ml', 'SegRunLib.scripts'],
-    install_requires=['torch=2.0.0',
-                      'torchio=0.19.2',
-                      'nibabel=5.1.0',
-                      'tqdm=4.66.1'],
+    install_requires=['torch==2.0.0',
+                      'torchio==0.19.2',
+                      'nibabel==5.1.0',
+                      'tqdm==4.66.1'],
     classifiers=[
     'Programming Language :: Python :: 3.10',
     'Operating System :: OS Independent'
