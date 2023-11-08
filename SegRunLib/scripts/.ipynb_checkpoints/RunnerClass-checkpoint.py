@@ -12,15 +12,10 @@ class Runner:
             "overlap_shape" : (32, 32, 24),
             "batch_size" : 1,
             "device" : settings.get('device', 'cpu'),
-            "path_to_weights" : settings.get('path_to_weights', None),
             "num_workers" : settings.get('num_workers', 4),
-        }
-        if self.settings["path_to_weights"] is None:
-            raise RuntimeError('Need a weights path in config')
-        
-        self.model = get_model('Unet3d_16ch',
-                               self.settings["path_to_weights"]).to(self.settings["device"])
-        
+        }        
+        self.model = get_model('Unet3d_16ch').to(self.settings["device"])
+       
         
     def fast_predict(self, patch_loader, grid_aggregator, thresh=0.5):
         for patches_batch in tqdm(patch_loader):
