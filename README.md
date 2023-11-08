@@ -1,9 +1,7 @@
 ### **SegRunLib** ###
-![alt text](https://github.com/NotYourLady/SegRunLib/blob/main/source/Unet3d_16ch_results.jpg)
 This is simple library for vessel segmentation
 
 ----------
-
 
 ## How to install ##
 To install, you can use the command:
@@ -33,8 +31,8 @@ msst project
   
 ----------
 
+![alt text](https://github.com/NotYourLady/SegRunLib/blob/main/source/Unet3d_16ch_results.jpg)
 
 ## From the developer ##
-
 > Hello. Have a good day!
   
